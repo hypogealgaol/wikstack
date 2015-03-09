@@ -1,19 +1,24 @@
 var express = require('express');
-var add_routes = require('./routes/add'); //ss
+
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var swig = require('swig'); 
+require('./filters')(swig); //must come after
 var mongoose = require('mongoose'); 
 mongoose.connect('mongodb://localhost/wikistack');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'mongodb connection error:'));
 
-
+//custom routes
+var add_routes = require('./routes/add'); //ss
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var wikis = require('./routes/wikis');
+
+
 
 var app = express();
 app.engine('html', swig.renderFile); 
@@ -33,6 +38,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/add', add_routes);
+app.use('/wikis', wikis); //forgot to address
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

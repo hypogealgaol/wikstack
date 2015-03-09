@@ -22,8 +22,11 @@
   <ul>
     {% if docs.length > 0 %}
       {% for doc in docs %}
-       <li><a href='#'></a></li>
+       <li>{{doc|page_link}}</li>
       {% endfor %}
+
+    {% else %}
+      <p>There are no pages. Why don't you <a href='/add'>add one</a>?</p>
     {% endif %}
   </ul>
     
