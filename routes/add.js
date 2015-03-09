@@ -22,10 +22,10 @@ router.post('/submit', function(req, res) {
   // this is the /add/submit route
   var models = require('../models/');
 
-  
+
   var title = req.body.title;
   var body = req.body.body;
-  var url_name = generateUrlName(req.body.title); 
+  var url_name = generateUrlName(title); 
 
   
   // STUDENT ASSIGNMENT:
