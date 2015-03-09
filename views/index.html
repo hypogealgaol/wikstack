@@ -3,27 +3,21 @@
 {% block content %}
   
   <div class="page-header">
-    <h1>Welcome to Twitter.js, Sinjihn!</h1>
+    <h1>BROWSE MY WIKISTACK!</h1>
   </div>
-  <div class="row">
-    <div class="col-md-3">
-      <img src="https://pbs.twimg.com/profile_images/2450268678/olxp11gnt09no2y2wpsh_normal.jpeg"><br>
-      <b>Your Name</b><br>
-      100 followers
-    </div>
-    <div class="col-md-9">
-    
-      <!-- display tweets here -->
-      {% for tweet in tweets %}
-      <div class=tweetbox>
-      	<!-- this will look stupid for now --> 
-      		 <p>{{tweet.name}}</p> <!-- just get var component with . notation --> 
-       		 <li>{{tweet.text}}</li>
 
-   	   </div>
-      {% endfor %}
       
-    </div>
+      <!-- display tweets here -->
+  <div>
+  	<!-- this will look stupid for now --> 
+	  <!-- just get var component with . notation --> 
+    <li>Fullstack Home</li>
+    <li>About Me</li>
+    <li>My Projects</li>
+    <li>My City</li>
+    <li>Code I've Written</li>
+
   </div>
+    
     
 {% endblock %}

@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var swing = require('swig'); 
+var swig = require('swig'); 
 var mongoose = require('mongoose'); 
 mongoose.connect('mongodb://localhost/wikistack');
 var db = mongoose.connection;
@@ -63,6 +63,20 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+app.get('/', function (req, res) {
+  //res.render( 'index', {title: 'Hall of Fame', people: people} );
+    res.send('Hello World!')
+})
+
+var server = app.listen(3000, function () {
+
+  var host = server.address().address
+  var port = server.address().port
+
+  console.log('Example app listening at http://%s:%s', host, port)
+
+})
 
 
 module.exports = app;
