@@ -28,7 +28,6 @@ router.post('/submit', function(req, res) {
   var url_name = generateUrlName(title); 
 
   
-  // STUDENT ASSIGNMENT:
   // add definitions of the `title`, `body` and `url_name` variables here
 
   var p = new models.Page({ "title": title, "body":body, "url_name":url_name });
